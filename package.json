@@ -1,0 +1,17 @@
+{
+  "name": "godbox",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5179",
+    "build": "tsc --noEmit && vite build",
+    "test": "node --test test/*.test.ts",
+    "e2e": "node test/e2e.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "playwright-core": "^1.64.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Godbox</title>
+  <link rel="icon" href="data:,">
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #0b1a3a; font: 13px system-ui, sans-serif; color: #eee; }
+    canvas { display: block; cursor: crosshair; touch-action: none; }
+    .panel { position: fixed; background: rgba(12, 16, 28, 0.82); border: 1px solid #334; border-radius: 6px; padding: 6px; }
+    #stats { top: 8px; left: 8px; line-height: 1.45; min-width: 220px; pointer-events: none; }
+    #bar { bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; max-width: calc(100vw - 32px); }
+    #tools, #speed, #world { display: flex; gap: 3px; flex-wrap: wrap; }
+    button { background: #233; color: #eee; border: 1px solid #455; border-radius: 4px; padding: 5px 8px; cursor: pointer; font: inherit; }
+    button:hover { background: #344; }
+    button.on { background: #c8a23a; color: #111; border-color: #e8c25a; }
+    input { width: 80px; background: #122; color: #eee; border: 1px solid #455; border-radius: 4px; padding: 4px; font: inherit; }
+    #help { top: 8px; right: 8px; color: #aab; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <canvas id="view"></canvas>
+  <div id="stats" class="panel"></div>
+  <div id="help" class="panel">Left: use power · Right/middle drag or WASD: pan · Wheel: zoom · Space: pause</div>
+  <div id="bar" class="panel">
+    <div id="tools"></div>
+    <div id="speed"></div>
+    <div id="world">
+      <input id="seed" type="number" value="7" aria-label="World seed">
+      <button id="regen">New world</button>
+      <button id="random">Random</button>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
